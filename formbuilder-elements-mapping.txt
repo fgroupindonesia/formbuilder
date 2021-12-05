@@ -1,0 +1,7 @@
+
+mapping elements to mysql table:
+file = just the title = varchar (75)
+hidden, file, header, checkbox-group, radio-group, select, text = varchar (75)
+paragraph, textarea = text
+number = int(10) 
+date = date

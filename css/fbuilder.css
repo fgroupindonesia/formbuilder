@@ -1,0 +1,25 @@
+
+.container {
+	width: 85%;
+	border-style: solid;
+	border-width: 1px;
+	border-color: coral;
+	padding: 20px;
+}
+
+input {
+	margin: 7px;
+}
+
+.container img {
+	opacity: 0.6;
+}
+
+.container img:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+
+#canvas div:first-child {
+	width: 100%;
+}
