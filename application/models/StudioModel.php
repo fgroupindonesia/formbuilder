@@ -32,17 +32,24 @@ class StudioModel extends CI_Model {
 	
 	public function createFields($fieldEntriesIn){
 		
-			$this->createFieldArray($fName);	
-		
-			return $endData;
+			// it is an array format 
+			// containing $data['type'] and $data['name']
+			// within an array 
+			
+			for($i=0; $i < sizeof($fieldEntriesIn); $i++){
+				
+				
+				
+			}
+			
 	}
-	
-	private function createFieldArray($fieldIn){
-		
-	}
+
 	
 	// this is extra function for creating new table
 	public function createTable($tableName, $fieldEntries){
+		
+		// change every spaces with underscore
+		$tableName = str_replace(' ', '_', $tableName);
 		
 		$this->load->dbforge();
 		// define table fields
@@ -95,14 +102,26 @@ class StudioModel extends CI_Model {
 		
 	}
 	
+	private function generateUniqueCode($len){
+		
+		
+		$randomletter = substr(str_shuffle("abcdefghijklmnopqrstuvwxyz0123456789"), 0, $len);
+		
+		return $randomletter;
+		
+	}
+	
 	public function add($fname, $fcode, $username){
 		
 		$stat = 'invalid';
 		
+		$generatedCode = $this->generateUniqueCode(7);
+		
 			$data = array(
 				'username' 	=> $username,
 				'code' 		=> $fcode,
-				'name' 	=> $fname
+				'name' 	=> $fname,
+				'codebase' => $generatedCode
 			);
 		
 		

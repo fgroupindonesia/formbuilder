@@ -50,7 +50,7 @@ class Studio extends CI_Controller {
 		
 		echo "<br><br>" . var_dump($dataFieldArray);
 		
-		$this->StudioModel->createTable($namaTable, $dataFieldArray);
+		$this->StudioModel->createTable('coba lagi', $dataFieldArray);
 		
 	}
 	

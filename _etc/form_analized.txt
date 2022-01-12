@@ -1,0 +1,28 @@
+<form-template
+	xmlns="http://www.w3.org/1999/xhtml">
+	<fields>
+		<field type="button" label="Button" subtype="button" class-name="btn-default btn" name="button-1638683139352-0" access="false" style="default"></field>
+		<field type="checkbox-group" required="false" label="Checkbox Group" toggle="false" inline="false" name="checkbox-group-1638683218689-0" access="false" other="false">
+			<option label="Option 1" value="option-1" selected="true">Option 1</option>
+			<option label="opsi2" value="opsi2" selected="false">opsi2</option>
+		</field>
+		<field type="header" subtype="h1" label="Header" access="false"></field>
+		<field type="paragraph" subtype="p" label="Paragraph" access="false"></field>
+		<field type="number" required="false" label="Number" class-name="form-control" name="number-1638683411422-0" access="false"></field>
+		<field type="radio-group" required="false" label="Radio Group" inline="false" name="radio-group-1638683415011-0" access="false" other="false">
+			<option label="Option 1" value="option-1" selected="false">Option 1</option>
+			<option label="Option 2" value="option-2" selected="false">Option 2</option>
+			<option label="Option 3" value="option-3" selected="false">Option 3</option>
+		</field>
+		<field type="select" required="false" label="Select" class-name="form-control" name="select-1638683416439-0" access="false" multiple="false">
+			<option label="Option 1" value="option-1" selected="true">Option 1</option>
+			<option label="Option 2" value="option-2" selected="false">Option 2</option>
+			<option label="Option 3" value="option-3" selected="false">Option 3</option>
+		</field>
+		<field type="text" required="false" label="Text Field" class-name="form-control" name="text-1638683421274-0" access="false" subtype="text"></field>
+		<field type="textarea" required="false" label="Text Area" class-name="form-control" name="textarea-1638683423758-0" access="false" subtype="textarea"></field>
+		<field type="file" required="false" label="File Upload" class-name="form-control" name="file-1638683404724-0" access="false" subtype="file" multiple="false"></field>
+		<field type="hidden" name="hidden-1638683409114-0" access="false"></field>
+		<field type="date" required="false" label="Date Field" class-name="form-control" name="date-1638683402587-0" access="false"></field>
+	</fields>
+</form-template>
