@@ -6,6 +6,7 @@ class Studio extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('StudioModel');
+		$this->session->keep_flashdata('username');
 	}
 
 	public function index()
@@ -48,9 +49,10 @@ class Studio extends CI_Controller {
 			$dataFieldArray [] = $data;
 		}
 		
-		echo "<br><br>" . var_dump($dataFieldArray);
+		echo "<br><hr>" ;
+		echo var_dump($dataFieldArray);
 		
-		$this->StudioModel->createTable('coba lagi', $dataFieldArray);
+		//$this->StudioModel->createTable('coba lagi', $dataFieldArray);
 		
 	}
 	
@@ -61,8 +63,14 @@ class Studio extends CI_Controller {
 		$us = $this->session->flashdata('username');
 		 
 		$arrData = $this->StudioModel->getAll($us);
+		
+		if($arrData['status'] == 'invalid'){
+			echo "no data found!";
+		}else {
+		
 		$this->load->view('management', $arrData);
 		
+		}
 		//echo var_dump($arrData);
 	}
 	
@@ -72,7 +80,7 @@ class Studio extends CI_Controller {
 		$fname = $this->input->post('name');
 		$fcode = $this->input->post('code');
 		//echo var_dump($this->input->post('code'));
-		$safefcode = mysql_real_escape_string($fcode);
+		$safefcode = $this->escapeString($fcode);
 		$us = $this->input->post('username');
 		// save 'em all into DB
 		
@@ -81,9 +89,16 @@ class Studio extends CI_Controller {
 		// create the table for specific form
 		// we need to traverse the fcode
 		
-		
+			
 		//var_dump($rest);
 		
+	}
+	
+	// mysqli_escape_ helper manually
+	private function escapeString($val) {
+    $db = get_instance()->db->conn_id;
+    $val = mysqli_real_escape_string($db, $val);
+    return $val;
 	}
 	
 }

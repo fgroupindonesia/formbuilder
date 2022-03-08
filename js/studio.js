@@ -41,6 +41,7 @@ function sendData(dataIn, formName, usIn){
 			alert(data);
 		},
 		error: function(data){
+			alert(data);
 			alert("fail");
 		}
 	});

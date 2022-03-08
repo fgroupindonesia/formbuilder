@@ -45,12 +45,17 @@ class Login extends CI_Controller {
 		
 		$res = $this->UserModel->add($us, $pass, $em);
 		
+		$params = 'email=' . $em . '&title=registration';
+		
 		echo "registering! Please check your email...</br>";
-		var_dump($res);
+		//var_dump($res);
+		
+		set_time_limit(600);
 		// 1.call email here
+		$payload = file_get_contents('https://fgroupindonesia.com/email/sending.php?'.$params);
 		
 		// 2.call timeout 3 seconds redirect
-		
+		echo '<meta http-equiv="refresh" content="3; url=http://fbuilder.fgroupindonesia.com" />';
 	}
 	
 }

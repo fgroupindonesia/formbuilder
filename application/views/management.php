@@ -21,7 +21,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
       </h1>
       <p class="subtitle">
         Manage your form data from here.
-        <br/><span class="reg">Hello, <?= ($multi_data[0]['username']) ?></span>
+        <br/><span class="reg">Hello, <?= $this->session->flashdata('username') ?></span>
       </p>
 	 
 	  <div class="columns has-text-centered">

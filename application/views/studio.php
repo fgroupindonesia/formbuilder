@@ -17,7 +17,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
   </head>
   <body>
   
-  <input type='hidden' id='hidden-username' value='<?= $this->session->flashdata('username'); ?>'/>
+  <input type='hidden' id='hidden-username' value='<?= $this->session->flashdata("username") ?>'/>
   
   <section class="section">
     <div class="container">
